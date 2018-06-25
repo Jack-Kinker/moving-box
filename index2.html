@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+'use strict';
+
+let boxTop = 200;
+let boxLeft = 200;
+
+document.addEventListener('keydown', (event) => {
+  const keyName = event.key;
+  if(keyName === "ArrowDown") {
+    boxTop += 10;
+    document.getElementById("box").style.top = boxTop + "px";
+  }
+  if(keyName === "ArrowUp") {
+    boxTop -= 10;
+    document.getElementById("box").style.top = boxTop + "px";
+  }
+  if(keyName === "ArrowLeft") {
+    boxLeft -= 10;
+    document.getElementById("box").style.left = boxLeft + "px";
+  }
+  if(keyName === "ArrowRight") {
+    boxLeft += 10;
+    document.getElementById("box").style.left = boxLeft + "px";
+  }
+
+
+  console.log('keydown event\n\n' + 'key: ' + keyName);
+});
+
+</script>
+<style>
+    #box { width: 100px; height: 100px; position: absolute; background:transparent; left: 200px; top: 200px; }
+    body {background-image: url("https://www.spelunkyworld.com/images/spelunky-xbla-08.jpg"); }
+</style>
+</head>
+<body>
+    <img src="https://vignette.wikia.nocookie.net/spelunky/images/7/77/Giant_Idol_infobox.png/revision/latest?cb=20121028211504" id="box"></img>
+</body>
+</html>
